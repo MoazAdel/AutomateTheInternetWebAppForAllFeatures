@@ -21,12 +21,11 @@ import java.util.HashMap;
 
 public class BaseTests {
 
-    public static final String testDataExcelFileName = "testdata.xlsx";
     protected HomePage homePage;
     private EventFiringWebDriver driver;
 
     @BeforeClass
-    public void setIp() {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         driver.register(new EventReporter());

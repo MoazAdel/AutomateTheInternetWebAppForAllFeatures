@@ -41,7 +41,9 @@ public class LoginWithExcelDataProvider extends BaseTests {
 
     @DataProvider // supplying data for a test method.
     public Object[][] getData() throws IOException {
-        FileInputStream fis = new FileInputStream("D:\\QC\\Study\\TAU\\Selenium WebDriver with Java Course\\new_selenium_project\\testData\\testData.xlsx"); // Your .xlsx file name along with path
+
+        String path = System.getProperty("user.dir");
+        FileInputStream fis = new FileInputStream(path + "/testData/testData.xlsx"); // The .xlsx file name along with path
         excelWorkbook = new XSSFWorkbook(fis);
         // Read sheet inside the workbook by its name
         excelSheet = excelWorkbook.getSheet("Credentials"); //Your sheet name
